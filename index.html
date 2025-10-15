@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Простая Яндекс Карта</title>
+    <title>Карта</title>
     <style>
         * {
             margin: 0;
@@ -34,25 +34,22 @@
     <div id="map"></div>
 
     <script>
-        // Ждем загрузки API Яндекс Карт
         ymaps3.ready.then(() => {
-            // Импортируем необходимые модули
             const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
 
-            // Создаем картуx
             const map = new YMap(
-                document.getElementById('map'), // Контейнер
+                document.getElementById('map'), 
                 {
                     location: {
-                        center: [37.617494, 55.755826], // Москва, Кремль
+                        center: [37.617494, 55.755826], 
                         zoom: 16
                     }
                 }
             );
 
-            // Добавляем стандартные слои
-            //map.addChild(new YMapDefaultSchemeLayer()); // Базовая схема
-            map.addChild(new YMapDefaultFeaturesLayer()); // Дополнительные элементы
+            
+            //map.addChild(new YMapDefaultSchemeLayer()); 
+            map.addChild(new YMapDefaultFeaturesLayer()); 
           
           const layerColor = new YMapDefaultSchemeLayer({
               theme: 'dark', customization: [
@@ -6896,13 +6893,12 @@
 
             map.addChild(layerColor);
 
-            // Добавляем маркер
             const markerElement = document.createElement('div');
             markerElement.className = 'marker';
             
             const marker = new YMapMarker(
                 {
-                    coordinates: [37.617494, 55.755826] // Координаты маркера
+                    coordinates: [37.617494, 55.755826]
                 },
                 markerElement
             );
